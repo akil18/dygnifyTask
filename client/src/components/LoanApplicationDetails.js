@@ -14,8 +14,9 @@ const LoanApplicationDetails = ({switchTab}) => {
 
         if(event.nativeEvent.submitter.innerText === 'SUBMIT'){
             handleFormSubmit();
-            sessionStorage.clear();
             event.target.reset();
+            sessionStorage.clear();
+            switchTab(0);
         }
         
         if(event.nativeEvent.submitter.innerText === 'PREVIOUS'){
@@ -37,9 +38,7 @@ const LoanApplicationDetails = ({switchTab}) => {
             loanTenure: sessionStorage.getItem('loanTenure')            
         };
 
-        console.log(formDetails);
-
-        fetch('http://localhost:5000/formDetails', {
+        fetch('https://server-orpin-psi.vercel.app/formDetails', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

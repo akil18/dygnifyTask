@@ -49,7 +49,7 @@ export default function FormTabs() {
   };
 
   return (
-    <Box sx={{ width: '100%'}}>
+    <Box sx={{ width: '100%', height: '100vh'}}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider', display: 'flex', justifyContent: 'center' }}>
         <Tabs value={value} aria-label="tabs">
           <Tab label="personal details" {...a11yProps(0, value)} />
